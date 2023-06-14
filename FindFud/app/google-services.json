@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "340324945005",
+    "project_id": "capstone-food-recommendation",
+    "storage_bucket": "capstone-food-recommendation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340324945005:android:55e4e8367557a16f7f4364",
+        "android_client_info": {
+          "package_name": "com.bangkit.findfud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340324945005-5d5ecv1ok8vr53f71g8h3kfctr8q88ua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7ZTsy0RUNDisP9qSkzjqCx_3LagEiLP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340324945005-5d5ecv1ok8vr53f71g8h3kfctr8q88ua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
