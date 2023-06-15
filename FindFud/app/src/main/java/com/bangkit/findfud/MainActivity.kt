@@ -7,6 +7,7 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
@@ -15,6 +16,7 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Text
 import androidx.compose.material3.*
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -40,11 +42,15 @@ import com.bangkit.findfud.ui.screen.search.SearchScreen
 import com.bangkit.findfud.ui.screen.sign_in.GoogleAuthUiClient
 import com.bangkit.findfud.ui.screen.sign_in.SignInScreen
 import com.bangkit.findfud.ui.screen.sign_in.SignInViewModel
+import com.bangkit.findfud.ui.theme.BackBlue
 import com.bangkit.findfud.ui.theme.FindFudTheme
 import com.google.android.gms.auth.api.identity.Identity
 import kotlinx.coroutines.launch
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+
 
 class MainActivity : ComponentActivity() {
+    private val viewModel: MainViewModel by viewModels()
 
     private val googleAuthUiClient by lazy {
         GoogleAuthUiClient(
@@ -53,14 +59,21 @@ class MainActivity : ComponentActivity() {
         )
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen().apply{
+            setKeepVisibleCondition {
+                viewModel.isLoading.value
+            }
+        }
+
         setContent {
             FindFudTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = BackBlue
                 ) {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "sign_in") {
@@ -139,93 +152,93 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-@Preview(showBackground = true, device = Devices.PIXEL_4)
-fun DefaultPreview() {
-    FindFudTheme {
-        FindFudApp()
-    }
-}
-
-@Composable
-fun FindFudApp(
-    modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController(),
-) {
-    Scaffold(
-        bottomBar = {
-            BottomBar(navController)
-        },
-        modifier = modifier
-    ) { innerPadding ->
-        NavHost(
-            navController = navController,
-            startDestination = Screen.Home.route,
-            modifier = Modifier.padding(innerPadding)
-        ) {
-            composable(Screen.Home.route) {
-                HomeScreen()
-            }
-            composable(Screen.Search.route) {
-                SearchScreen()
-            }
-            composable(Screen.Profile.route) {
-                ProfileScreen()
-            }
-        }
-    }
-}
-
-
-@Composable
-private fun BottomBar(
-    navController: NavHostController,
-    modifier: Modifier = Modifier
-) {
-    BottomNavigation(
-        modifier = modifier
-    ) {
-        val navBackStackEntry by navController.currentBackStackEntryAsState()
-        val currentRoute = navBackStackEntry?.destination?.route
-        val navigationItems = listOf(
-            NavigationItem(
-                title = stringResource(R.string.menu_home),
-                icon = Icons.Default.Home,
-                screen = Screen.Home
-            ),
-            NavigationItem(
-                title = stringResource(R.string.menu_search),
-                icon = Icons.Default.Search,
-                screen = Screen.Search
-            ),
-            NavigationItem(
-                title = stringResource(R.string.menu_profile),
-                icon = Icons.Default.AccountCircle,
-                screen = Screen.Profile
-            ),
-        )
-        BottomNavigation {
-            navigationItems.map { item ->
-                BottomNavigationItem(
-                    icon = {
-                        Icon(
-                            imageVector = item.icon,
-                            contentDescription = item.title
-                        )
-                    },
-                    label = { Text(item.title) },
-                    selected = currentRoute == item.screen.route,
-                    onClick = {
-                        navController.navigate(item.screen.route) {
-                            popUpTo(navController.graph.findStartDestination().id) {
-                                saveState = true
-                            }
-                            restoreState = true
-                            launchSingleTop = true
-                        }
-                    }
-                )
-            }
-        }
-    }
-}
+//@Composable
+//@Preview(showBackground = true, device = Devices.PIXEL_4)
+//fun DefaultPreview() {
+//    FindFudTheme {
+//        FindFudApp()
+//    }
+//}
+//
+//@Composable
+//fun FindFudApp(
+//    modifier: Modifier = Modifier,
+//    navController: NavHostController = rememberNavController(),
+//) {
+//    Scaffold(
+//        bottomBar = {
+//            BottomBar(navController)
+//        },
+//        modifier = modifier
+//    ) { innerPadding ->
+//        NavHost(
+//            navController = navController,
+//            startDestination = Screen.Home.route,
+//            modifier = Modifier.padding(innerPadding)
+//        ) {
+//            composable(Screen.Home.route) {
+//                HomeScreen()
+//            }
+//            composable(Screen.Search.route) {
+//                SearchScreen()
+//            }
+//            composable(Screen.Profile.route) {
+//                ProfileScreen()
+//            }
+//        }
+//    }
+//}
+//
+//
+//@Composable
+//private fun BottomBar(
+//    navController: NavHostController,
+//    modifier: Modifier = Modifier
+//) {
+//    BottomNavigation(
+//        modifier = modifier
+//    ) {
+//        val navBackStackEntry by navController.currentBackStackEntryAsState()
+//        val currentRoute = navBackStackEntry?.destination?.route
+//        val navigationItems = listOf(
+//            NavigationItem(
+//                title = stringResource(R.string.menu_home),
+//                icon = Icons.Default.Home,
+//                screen = Screen.Home
+//            ),
+//            NavigationItem(
+//                title = stringResource(R.string.menu_search),
+//                icon = Icons.Default.Search,
+//                screen = Screen.Search
+//            ),
+//            NavigationItem(
+//                title = stringResource(R.string.menu_profile),
+//                icon = Icons.Default.AccountCircle,
+//                screen = Screen.Profile
+//            ),
+//        )
+//        BottomNavigation {
+//            navigationItems.map { item ->
+//                BottomNavigationItem(
+//                    icon = {
+//                        Icon(
+//                            imageVector = item.icon,
+//                            contentDescription = item.title
+//                        )
+//                    },
+//                    label = { Text(item.title) },
+//                    selected = currentRoute == item.screen.route,
+//                    onClick = {
+//                        navController.navigate(item.screen.route) {
+//                            popUpTo(navController.graph.findStartDestination().id) {
+//                                saveState = true
+//                            }
+//                            restoreState = true
+//                            launchSingleTop = true
+//                        }
+//                    }
+//                )
+//            }
+//        }
+//    }
+//}

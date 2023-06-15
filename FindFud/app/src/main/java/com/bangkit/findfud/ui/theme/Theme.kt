@@ -14,13 +14,13 @@ import androidx.compose.ui.text.TextStyle
 import androidx.core.view.ViewCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = NavGrey,
+    secondary = TextBlue,
+    tertiary = BackBlue
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = BackYellow,
+    primary = NavGrey,
     secondary = TextBlue,
     background = BackBlue,
     onSurfaceVariant = TextBlack
