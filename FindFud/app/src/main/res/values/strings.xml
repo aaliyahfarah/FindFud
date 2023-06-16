@@ -53,4 +53,5 @@
     <string name="placeholder_search">Search a location</string>
     <string name="user_name">Hello, Aaliyah!</string>
     <string name="near_food">Near Food</string>
+    <string name="location_Senayan">Senayan</string>
 </resources>

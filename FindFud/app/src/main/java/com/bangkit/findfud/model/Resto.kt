@@ -2,7 +2,8 @@ package com.bangkit.findfud.model
 
 data class Resto(
     val idResto: Int,
-    val nameResto: String,
+    val namaResto: String,
     val menuResto: String,
-    val distanceResto: String
+    val distanceResto: String,
+    val addressResto: String
 )

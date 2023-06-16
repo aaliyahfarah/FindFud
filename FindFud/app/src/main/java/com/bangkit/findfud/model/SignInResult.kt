@@ -1,5 +1,4 @@
-package com.bangkit.findfud.ui.screen.sign_in
-
+package com.bangkit.findfud.model
 data class SignInResult(
     val data: UserData?,
     val errorMessage: String?

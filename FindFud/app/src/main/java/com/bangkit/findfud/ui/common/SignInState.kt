@@ -1,4 +1,4 @@
-package com.bangkit.findfud.ui.screen.sign_in
+package com.bangkit.findfud.ui.common
 
 data class SignInState(
     val isSignInSuccessful: Boolean = false,

@@ -1,4 +1,4 @@
-package com.bangkit.findfud
+package com.bangkit.findfud.ui.screen.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,13 +9,5 @@ import kotlinx.coroutines.launch
 
 class MainViewModel: ViewModel() {
 
-    private val _isLoading = MutableStateFlow(true)
-    val isLoading = _isLoading.asStateFlow()
 
-    init {
-        viewModelScope.launch {
-            delay(6000)
-            _isLoading.value = false
-        }
-    }
 }

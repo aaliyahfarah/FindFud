@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.bangkit.findfud.ui.screen.sign_in.UserData
+import com.bangkit.findfud.model.UserData
 
 @Composable
 fun ProfileScreen(

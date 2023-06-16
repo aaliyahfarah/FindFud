@@ -1,6 +1,8 @@
 package com.bangkit.findfud.ui.screen.sign_in
 
 import androidx.lifecycle.ViewModel
+import com.bangkit.findfud.model.SignInResult
+import com.bangkit.findfud.ui.common.SignInState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update

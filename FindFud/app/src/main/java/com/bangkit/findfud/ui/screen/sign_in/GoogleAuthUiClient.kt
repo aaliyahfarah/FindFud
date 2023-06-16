@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import com.bangkit.findfud.R
+import com.bangkit.findfud.model.SignInResult
+import com.bangkit.findfud.model.UserData
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.BeginSignInRequest.GoogleIdTokenRequestOptions
 import com.google.android.gms.auth.api.identity.SignInClient
@@ -12,6 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 import java.util.concurrent.CancellationException
+
 
 class GoogleAuthUiClient(
     private val context: Context,

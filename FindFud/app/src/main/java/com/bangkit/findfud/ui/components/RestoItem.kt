@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -32,13 +33,13 @@ fun RestoItem (
         modifier = modifier.fillMaxWidth().height(85.dp),
         shape = RoundedCornerShape(5.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.background,
+            containerColor = Color.White,
         ),
     ){
         Column {
             Column(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
                 Text(
-                    text = resto.nameResto,
+                    text = resto.namaResto,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     fontWeight = FontWeight.ExtraBold,
@@ -90,7 +91,8 @@ fun RestoItemPreview() {
                 3,
                 "Cafe Baru",
                 "Jasmine Tea, Water, Lemon Tea",
-                "0,2 km"
+                "0,2 km",
+                "jalan mawar"
             ),
             modifier = Modifier
         )

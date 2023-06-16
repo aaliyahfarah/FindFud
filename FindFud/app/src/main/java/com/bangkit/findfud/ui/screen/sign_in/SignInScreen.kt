@@ -5,16 +5,11 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.ContentAlpha.medium
 import androidx.compose.material.Icon
-import androidx.compose.material.SnackbarDefaults.backgroundColor
-import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,6 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.bangkit.findfud.R
+import com.bangkit.findfud.ui.common.SignInState
 import com.bangkit.findfud.ui.theme.BackBlue
 import com.bangkit.findfud.ui.theme.TitleBlack
 import com.bangkit.findfud.ui.theme.Shape
