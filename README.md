@@ -12,7 +12,7 @@ To use this APP, you need to download the application <a href="https://drive.goo
 ### Prerequisites
 
 - Android Studio
-- Figma
+- <a href=https://www.figma.com/file/leaaMG49WAFQ7LuHFnHriI/FindFud?type=design&node-id=284%3A505&t=BumxvVa4GwEdKDWR-1>Figma</a>
 - Maps SDK
 - Jetpack Compose
 
