@@ -4,6 +4,16 @@
 "FINDFUD" is an application that provides food recommendations based on weather conditions. This app is using OpenWeatherAPI to know the weather and using AbstractAPI for geolocation. Machine Learning 
 will be processing restaurant data and food in each restaurant. After that, will recommend you top 5 restaurants with good ratings, good service, and tasty food.
 
+## Other Github
+- Mobile Documentation:
+<a href="https://github.com/aaliyahfarah/FindFud/">Link</a>
+
+- Back End Documentation:
+<a href="https://github.com/FatihAlsena/findfud_api/tree/main">Link</a>
+
+- Machine Learning Documentation:
+<a href="https://github.com/lxnovea/Dataset.git">Link</a>
+
 
 ## Installation
 
