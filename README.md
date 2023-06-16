@@ -1,8 +1,8 @@
 # Bangkit capstone FindFud
 
 ## What is "FINDFUD"?
-"FINDFUD" is a Noje.js REST API that provides food recommendation based on weather condition. This app is using OpenWeatherAPI to know the weather and using AbstractAPI for geolocation. Machine Learning 
-will processing restaurant data and food in each restaurant. After that, will recommend you top 5 restaurant with a good rating, good serve, and tasty food.
+"FINDFUD" is an application that provides food recommendations based on weather conditions. This app is using OpenWeatherAPI to know the weather and using AbstractAPI for geolocation. Machine Learning 
+will be processing restaurant data and food in each restaurant. After that, will recommend you top 5 restaurants with good ratings, good service, and tasty food.
 
 
 ## Installation
