@@ -14,11 +14,6 @@ will be processing restaurant data and food in each restaurant. After that, will
 - Machine Learning Documentation:
 <a href="https://github.com/lxnovea/Dataset.git">Link</a>
 
-
-## Installation
-
-To use this APP, you need to download the application <a href="https://drive.google.com/file/d/1C3vs8yCPo6UUbaxcB6B9Uz_9LaF7nm6v/view?usp=sharing">here.</a>
-
 ### Prerequisites
 
 - Android Studio
